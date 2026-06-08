@@ -1,0 +1,11 @@
+/* Cores da Marca e Imagem de Fundo */
+:root {
+    /* Cores Principais - Floor Store */
+    --primary: #F5C200;    /* Amarelo Floor */
+    --secondary: #1A2472;  /* Azul Marinho Store */
+    --accent: #25D366;     /* WhatsApp Verde */
+    --white: #ffffff;
+
+    /* Imagem de Fundo da Seção Hero */
+    --bg-hero: url('../assets/fundo.jpg');
+}

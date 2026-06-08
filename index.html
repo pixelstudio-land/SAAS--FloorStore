@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floor Store | Orçamento de Piso Online</title>
+    <meta name="description" content="Faça seu orçamento de piso laminado ou vinílico online em 30 segundos. Floor Store — qualidade e instalação com o melhor preço.">
+
+    <!-- META PIXEL CONFIG EXTERNO -->
+    <script src="js/pixel.js"></script>
+
+    <!-- ESTILOS EXTERNOS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS DA BASE -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- CSS TEMA/CORES DO CLIENTE -->
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container flex">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Floor Store" onerror="this.style.display='none'">
+                <div class="dynamic-brand">NOME <span>MARCA</span></div>
+            </div>
+            <a href="#" target="_blank" class="btn-zap-header" id="headerZapBtn">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>RENOVE SEUS AMBIENTES COM <br> <span>PISOS DE QUALIDADE</span></h1>
+            <p>Laminado e Vinílico com instalação inclusa. Faça seu orçamento em 30 segundos.</p>
+
+            <div class="calculator-box">
+                <div class="form-group">
+                    <label>Qual a metragem aproximada? (m²)</label>
+                    <input type="number" id="metragem" placeholder="Ex: 45">
+                </div>
+
+                <div class="form-group">
+                    <label>Piso atual do local?</label>
+                    <select id="pisoAtual">
+                        <!-- Populado dinamicamente via js/main.js -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>O piso está nivelado?</label>
+                    <select id="nivelamento">
+                        <option value="Nao sei">Não sei dizer</option>
+                        <option value="Sim">Sim, está reto</option>
+                        <option value="Não">Não, está irregular</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de piso preferido?</label>
+                    <select id="modelo">
+                        <!-- Populado dinamicamente via js/main.js -->
+                    </select>
+                </div>
+
+                <button class="btn-calc" onclick="calcular()">VER PREÇO ESTIMADO</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="dynamic-feature-brand">Por que escolher a <span>MARCA</span>?</h2>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Laminado e Vinílico</h3>
+                    <p>Grande variedade de padrões, texturas e espessuras para todos os ambientes.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>Instalação Inclusa</h3>
+                    <p>Equipe especializada cuida de tudo, do preparo do piso até o acabamento final.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tags"></i>
+                    <h3>Melhor Preço</h3>
+                    <p>Preço direto de loja com condições de pagamento facilitadas para você.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-row">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Floor Store" onerror="this.style.display='none'">
+                <div class="dynamic-brand">NOME <span>MARCA</span></div>
+            </div>
+            <div class="footer-text">
+                &copy; Todos os direitos reservados. <span style="margin: 0 5px; opacity: 0.3;">|</span> Desenvolvido
+                por Pixel Studio
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE RESULTADO -->
+    <div class="modal-overlay" id="modalResult">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+
+            <h3>Orçamento Estimado</h3>
+
+            <div class="price-display">
+                <div class="total-label">Investimento Aproximado</div>
+                <div class="total-value" id="valorFinal">R$ 0,00</div>
+            </div>
+
+            <div class="bonus-list">
+                <p style="margin-bottom:10px; font-weight:600;">Condições Exclusivas Hoje:</p>
+                <!-- Populado dinamicamente via js/main.js -->
+                <div id="bonusListRenderer"></div>
+            </div>
+
+            <a href="#" id="linkZap" class="btn-action" target="_parent">
+                AGENDAR VISITA <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <p class="disclaimer">
+                *Valor estimado. Visita técnica necessária para validar.
+            </p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE CONFIGURAÇÃO E LÓGICA -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
